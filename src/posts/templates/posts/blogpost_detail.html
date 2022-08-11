@@ -10,6 +10,7 @@
     <article>
         <h2>{{ post.title }}</h2>
         <h5>publie par <i>{{ post.author_or_default }}</i> le {{ post.created_on|date:'j F Y'}}</h5>
+        <img src="{{ post.thumbnail.url }}" alt="#">
         <p>{{ post.context|linebreaks|safe }}</p>
     </article>
 

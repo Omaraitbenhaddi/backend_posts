@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth import get_user_model
@@ -13,6 +14,7 @@ class BlogPost(models.Model):
     created_on = models.DateField(blank=True,null=True)
     published = models.BooleanField(default=False, verbose_name='publier')
     context = models.TextField(blank=True, verbose_name='contenu')
+    thumbnail = models.ImageField(blank=True, upload_to='blog')   #blank n'est pas obligatoir
 
 
 
